@@ -49,6 +49,13 @@ st.markdown("""
   /* Global */
   [data-testid="stAppViewContainer"] { background: #0f1117; color: #e8eaf6; }
   [data-testid="stSidebar"] { background: #1a1d27; }
+  [data-testid="stSidebar"] * { color: #c5c9ff; }
+  [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 { color: #e8eaf6; }
+  [data-testid="stSidebar"] code { color: #7ee8a2; }
+
+  /* Metric widget contrast fix */
+  [data-testid="stMetricValue"] { color: #e8eaf6 !important; }
+  [data-testid="stMetricLabel"] { color: #9099cc !important; }
 
   /* Cards */
   .card {
@@ -380,24 +387,22 @@ def section_phrase_query(docs):
             tokens = preprocess(query)
             biwords_used = [f"{tokens[i]} {tokens[i+1]}"
                             for i in range(len(tokens)-1)] if len(tokens)>1 else []
-            _bw_spans = "  ".join("<span class=\'token\'>" + b + "</span>" for b in biwords_used)
-            _bw_docs  = ", ".join(biword_results) if biword_results else "None"
-            st.markdown(
-                "<div class=\'card card-orange\'>Biwords searched: " + _bw_spans +
-                "<br><br>Matching docs: <b>" + _bw_docs + "</b></div>",
-                unsafe_allow_html=True,
-            )
+            biword_html = "  ".join(f"<span class='token'>{b}</span>" for b in biwords_used)
+            st.markdown(f"<div class='card card-orange'>"
+                        f"Biwords searched: "
+                        f"{biword_html}<br>"
+                        f"<br>Matching docs: <b>{', '.join(biword_results) if biword_results else 'None'}</b>"
+                        f"</div>", unsafe_allow_html=True)
 
         with col2:
             st.markdown("<div class='section-title'>Positional Index Results</div>",
                         unsafe_allow_html=True)
-            _tok_spans = "  ".join("<span class=\'token\'>" + t + "</span>" for t in tokens)
-            _pos_docs  = ", ".join(pos_results) if pos_results else "None"
-            st.markdown(
-                "<div class=\'card card-green\'>Terms: " + _tok_spans +
-                "<br><br>Matching docs: <b>" + _pos_docs + "</b></div>",
-                unsafe_allow_html=True,
-            )
+            token_html = "  ".join(f"<span class='token'>{t}</span>" for t in tokens)
+            st.markdown(f"<div class='card card-green'>"
+                        f"Terms: "
+                        f"{token_html}<br>"
+                        f"<br>Matching docs: <b>{', '.join(pos_results) if pos_results else 'None'}</b>"
+                        f"</div>", unsafe_allow_html=True)
 
         # Show biword index sample
         st.subheader("Biword Index (sample)")
