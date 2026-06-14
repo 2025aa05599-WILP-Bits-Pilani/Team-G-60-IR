@@ -1,0 +1,33 @@
+DOC001: Information retrieval is the activity of obtaining information system resources relevant to an information need from a collection of those resources. Searches can be based on full-text or other content-based indexing. Information retrieval is the science of searching for information in a document, searching for documents themselves, and also searching for the metadata that describes data.
+
+DOC002: Natural language processing is a subfield of linguistics, computer science, and artificial intelligence concerned with the interactions between computers and human language, in particular how to program computers to process and analyze large amounts of natural language data. The goal is a computer capable of understanding the contents of documents, including the contextual nuances of the language within them.
+
+DOC003: Machine learning is a method of data analysis that automates analytical model building. It is based on the idea that systems can learn from data, identify patterns and make decisions with minimal human intervention. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so.
+
+DOC004: Text preprocessing is a crucial step in natural language processing and information retrieval. It involves tokenization of text into words, removal of stop words, stemming and lemmatization, and handling of special characters and punctuation. Good preprocessing can significantly improve the quality of search results and text classification tasks.
+
+DOC005: A search engine is a software system designed to carry out web searches. They search the World Wide Web in a systematic way for particular information specified in a textual web search query. The search results are generally presented in a line of results called search engine results pages. The information may be a mix of links to web pages, images, videos and other types of files.
+
+DOC006: Document indexing is the process of associating keywords with documents stored in a database or file system. Indexing improves the speed and performance of finding relevant documents for a search query. An inverted index is a database index storing a mapping from content, such as words or numbers, to its locations in a document or a set of documents.
+
+DOC007: Stemming is the process of reducing inflected or derived words to their word stem, base, or root form. For example, the words fishing, fished, and fisher all have the stem fish. Lemmatization is the process of grouping together the inflected forms of a word so they can be analysed as a single item, identified by the word's lemma. Unlike stemming, lemmatization ensures the root word belongs to the language.
+
+DOC008: A B-tree is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time. The B-tree generalizes the binary search tree, allowing for nodes with more than two children. A binary search tree is a data structure where each node has at most two children, and all nodes in the left subtree are smaller than the root.
+
+DOC009: Wildcard queries allow users to search for words matching a pattern using wildcard characters such as asterisk or question mark. Edit distance, also known as Levenshtein distance, measures the minimum number of single-character edits required to change one word into another. K-gram index stores all k-length substrings of dictionary terms to support wildcard and spelling correction queries.
+
+DOC010: Phrase queries allow users to search for exact sequences of words in a document collection. A positional index stores the positions of terms in documents, enabling accurate phrase query processing. A biword index creates index terms from consecutive pairs of words in text. Positional indexes provide more accurate results than biword indexes for phrase queries.
+
+DOC011: The vector space model represents text documents as vectors of identifiers, such as terms. Each dimension corresponds to a term, and values are typically term frequency or TF-IDF weights. Similarity between documents and queries is measured using cosine similarity, enabling ranking of search results.
+
+DOC012: LSI is a technique in natural language processing and information retrieval that uncovers hidden relationships between words by reducing the dimensionality of the term-document matrix using singular value decomposition. It helps capture semantic meaning beyond exact keyword matches.
+
+DOC013: Relevance feedback is an interactive process where the system refines search results based on user judgments of relevance. By incorporating feedback, the system adjusts query weights or expands queries to improve retrieval performance.
+
+DOC014: BM25 is a probabilistic retrieval function widely used in search engines. It ranks documents based on term frequency, inverse document frequency, and document length normalization. BM25 is considered more effective than simple TF-IDF weighting.
+
+DOC015: NER is an NLP task that identifies and classifies named entities in text into categories such as person names, organizations, locations, dates, and numerical expressions. It is crucial for information extraction and knowledge graph construction.
+
+DOC016: Word embeddings are dense vector representations of words that capture semantic meaning. Techniques like Word2Vec, GloVe, and FastText learn embeddings from large corpora, enabling similarity comparisons and improving downstream NLP tasks.
+
+DOC017: Transformers are deep learning architectures based on self-attention mechanisms. They power state-of-the-art NLP models like BERT and GPT, enabling contextual understanding of language and improving tasks such as question answering and text classification.
