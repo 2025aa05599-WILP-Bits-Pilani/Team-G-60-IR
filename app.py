@@ -380,20 +380,24 @@ def section_phrase_query(docs):
             tokens = preprocess(query)
             biwords_used = [f"{tokens[i]} {tokens[i+1]}"
                             for i in range(len(tokens)-1)] if len(tokens)>1 else []
-            st.markdown(f"<div class='card card-orange'>"
-                        f"Biwords searched: "
-                        f"{'  '.join(f'<span class=\"token\">{b}</span>' for b in biwords_used)}<br>"
-                        f"<br>Matching docs: <b>{', '.join(biword_results) if biword_results else 'None'}</b>"
-                        f"</div>", unsafe_allow_html=True)
+            _bw_spans = "  ".join("<span class=\'token\'>" + b + "</span>" for b in biwords_used)
+            _bw_docs  = ", ".join(biword_results) if biword_results else "None"
+            st.markdown(
+                "<div class=\'card card-orange\'>Biwords searched: " + _bw_spans +
+                "<br><br>Matching docs: <b>" + _bw_docs + "</b></div>",
+                unsafe_allow_html=True,
+            )
 
         with col2:
             st.markdown("<div class='section-title'>Positional Index Results</div>",
                         unsafe_allow_html=True)
-            st.markdown(f"<div class='card card-green'>"
-                        f"Terms: "
-                        f"{'  '.join(f'<span class=\"token\">{t}</span>' for t in tokens)}<br>"
-                        f"<br>Matching docs: <b>{', '.join(pos_results) if pos_results else 'None'}</b>"
-                        f"</div>", unsafe_allow_html=True)
+            _tok_spans = "  ".join("<span class=\'token\'>" + t + "</span>" for t in tokens)
+            _pos_docs  = ", ".join(pos_results) if pos_results else "None"
+            st.markdown(
+                "<div class=\'card card-green\'>Terms: " + _tok_spans +
+                "<br><br>Matching docs: <b>" + _pos_docs + "</b></div>",
+                unsafe_allow_html=True,
+            )
 
         # Show biword index sample
         st.subheader("Biword Index (sample)")
